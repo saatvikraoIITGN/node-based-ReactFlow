@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# node-based-ReactFlow
+
+## Demo
+
+[Loom video presentation](https://www.loom.com/share/81ffc12298f04c8686b2c3e74a253337?sid=87a84993-8d91-49e2-bfa0-e90c99eafc99)
+
+## Additional Notes
+
+1. We can add preventions or restrictions in connecting nodes like: 
+
+- [x] Prevent direct communication between circular nodes: requires checking if source and target nodes are circular nodes or not
+- [x] Prevent connecting nodes from different branches (task - 2)
+- [ ] Prevent connecting back to a node that's already in the path: requires checking the edges to see if making this connection creates a loop 
+
+2. When we add last node to a branch, we update the source node (which was labelled "parallel end" before) to a normal labelled node and label the target node to "parallel end". But when we remove or delete the latest node (target before), the state of previously source node doesn't change. We can add this functionality such that the labelling of a node as "parallel end" is not only taken care when we connect a node, it should always be checked. We will have to update `handleDeleteNode` function. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
